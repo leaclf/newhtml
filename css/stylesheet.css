@@ -233,3 +233,36 @@ a {
     font-size: 1.5rem;
   }
 }
+/* cards */
+.card {
+  box-shadow: 0 0 10px lightgray;
+  margin: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card--primary .card__header {
+  background-color: var(--color-primary);
+  color: white;
+}
+.card--secondary .card__header {
+  background-color: var(--color-secondary);
+  color: white;
+}
+.card__border,
+.card__header {
+  padding: 2.5rem 2.7rem;
+  margin: 0;
+}
+@media screen and (min-width: 501px) {
+  .card {
+    width: 50%;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 33%;
+    text-align: left;
+  }
+}
