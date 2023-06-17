@@ -234,9 +234,11 @@ a {
   }
 }
 /* cards */
+.plan {
+  padding: 1rem;
+}
 .card {
   box-shadow: 0 0 10px lightgray;
-  margin: 1rem;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -253,6 +255,17 @@ a {
 .card__header {
   padding: 2.5rem 2.7rem;
   margin: 0;
+}
+.plan--popular .card__header {
+  position: relative;
+}
+.plan--popular .card__header::before {
+  content: url("../images/popular.svg");
+  position: absolute;
+  width: 3.5rem;
+  top: -6px;
+  right: 20px;
+  font-size: 2rem;
 }
 @media screen and (min-width: 501px) {
   .card {
