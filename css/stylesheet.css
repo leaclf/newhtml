@@ -41,6 +41,7 @@ h3 {
 p {
   margin-top: 0;
 }
+
 @media screen and (min-width: 1024px) {
   body {
     font-size: 1.8rem;
@@ -144,8 +145,18 @@ a {
   width: 40px;
   height: 40px;
 }
+.icon-container--accent {
+  background-color: var(--color-accent);
+}
 .icon--primary {
   fill: var(--color-primary);
+}
+.icon--white {
+  fill: #fff;
+}
+.icon--small {
+  width: 30px;
+  height: 30px;
 }
 /* buttons */
 .btn {
@@ -268,18 +279,7 @@ a {
   right: 20px;
   font-size: 2rem;
 }
-@media screen and (min-width: 501px) {
-  .card {
-    width: 50%;
-    text-align: center;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .card {
-    width: 33%;
-    text-align: left;
-  }
-}
+
 /* media */
 .media {
   display: flex;
@@ -320,6 +320,17 @@ a {
   font-style: normal;
   margin-bottom: 0;
 }
+@media screen and (min-width: 700px) {
+  .quote {
+    font-size: 2.2rem;
+  }
+  .quote__company {
+    font-size: 1.2rem;
+  }
+  .quote__author {
+    font-size: 2.2rem;
+  }
+}
 @media screen and (min-width: 1024px) {
   .quote {
     font-size: 2.4rem;
@@ -340,5 +351,30 @@ a {
 @media screen and (min-width: 1024px) {
   .grid--1x3 {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Testimonials */
+.testimonial {
+  padding: 3rem;
+}
+.testimonial__img {
+  position: relative;
+}
+.testimonial .icon-container {
+  position: absolute;
+  top: 30px;
+  right: -35px;
+}
+.testimonial__img > img {
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .testimonial {
+    padding: 4rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .testimonial .quote {
+    margin-left: 6rem;
   }
 }
