@@ -162,14 +162,27 @@ a {
 /* buttons */
 .btn {
   border-radius: 40px;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 2rem 3rem;
-  font-size: 1.8rem;
-  white-space: nowrap;
-  margin: 1rem 0;
-  text-align: center;
   border: 0;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  outline: 0;
+  padding: 2rem 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.btn--small {
+  font-size: 1.6rem;
+  border-radius: 50px;
+  padding: 1.7rem 2rem;
+}
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
 }
 .btn--primary,
 .btn--secondary,
@@ -220,8 +233,8 @@ a {
 /* forms */
 .form {
   font-size: 2rem;
-  padding: 2rem 4rem;
-  border-radius: 40px;
+  padding: 1.5rem 3.5rem;
+  border-radius: 30px;
   border: 1px solid var(--color-border);
   outline: 0;
   color: var(--color-headings);
@@ -233,14 +246,11 @@ a {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   display: flex;
-  width: 500px;
-  padding: 0rem 0.3rem;
-  box-shadow: 0 0 20px 10px var(--color-border);
 }
 .input-group .form {
   border: 0;
-  flex: 1;
-  padding: 1rem 0.3rem 1rem 1rem;
+  flex-grow: 1;
+  padding: 1.5rem 1rem;
 }
 .input-group .btn {
   margin: 4px;
@@ -259,7 +269,10 @@ a {
   border-radius: 10px;
   overflow: hidden;
 }
-
+.plan--popular {
+  position: relative;
+  bottom: 2rem;
+}
 .card--primary .card__header {
   background-color: var(--color-primary);
   color: white;
@@ -268,21 +281,86 @@ a {
   background-color: var(--color-secondary);
   color: white;
 }
+.card--primary .badge--primary {
+  background-color: #126de4;
+}
+.card--secondary .badge--secondary {
+  background-color: #02cdf1;
+}
 .card__border,
 .card__header {
   padding: 2.5rem 2.7rem;
   margin: 0;
 }
+/* plans */
+.plan {
+  transition: transform 0.2s ease-out;
+}
+.plan__name {
+  color: #fff;
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.4rem;
+}
+
+.plan__price {
+  font-size: 6rem;
+}
+
+.plan__billing-cycle {
+  font-size: 2.4rem;
+  font-weight: 300;
+  opacity: 0.8;
+  margin-right: 1rem;
+}
+
+.plan__description {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.plan .list__item {
+  margin-bottom: 2rem;
+}
+.plan--popular {
+  transform: scale(1.1);
+}
 .plan--popular .card__header {
   position: relative;
 }
+
 .plan--popular .card__header::before {
-  content: url("../images/popular.svg");
+  content: url(../images/popular.svg);
+  width: 40px;
+  display: inline-block;
   position: absolute;
-  width: 3.5rem;
   top: -6px;
-  right: 20px;
-  font-size: 2rem;
+  right: 5%;
+}
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan--popular:hover {
+  transform: scale(1.15);
+}
+@media screen and (min-width: 1024px) {
+  .plan__name {
+    font-size: 1.4rem;
+  }
+
+  .plan__price {
+    font-size: 5rem;
+  }
+
+  .plan__billing-cycle {
+    font-size: 1.6rem;
+  }
+
+  .plan__description {
+    font-size: 1.7rem;
+  }
 }
 
 /* media */
@@ -552,4 +630,35 @@ a {
     text-align: left;
     align-self: center;
   }
+}
+/* domain*/
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+  padding: 0;
+}
+.block-domain__prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 5rem);
+  justify-items: center;
+  font-weight: 600;
+  max-width: 700px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
+/* plans Block */
+.block-plans .grid {
+  row-gap: 4rem;
+  column-gap: 4rem;
+}
+.block-plans .card {
+  max-width: 500px;
+  margin: 0 auto;
 }
