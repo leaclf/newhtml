@@ -673,13 +673,13 @@ a {
   margin: 8rem 0;
 }
 .feature__heading {
-  margin-top: 1rem;
+  margin-top: 1rem 0;
 }
 .feature:first-of-type {
   margin-top: 6rem;
 }
 @media screen and (min-width: 1024px) {
-  .feature:nth-of-type(even) .feature__header {
+  .feature:nth-of-type(even) .feature__content {
     order: 2;
   }
 }
